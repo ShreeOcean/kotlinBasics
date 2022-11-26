@@ -30,12 +30,32 @@ class DiceRollActivity : AppCompatActivity() {
         val luckyNumber = (1..num).random()
 
         when (dice.roll()) {
-            luckyNumber -> binding.tvDiceRoll.text = dice.roll().toString() + (" You won! your lucky roll is $luckyNumber" )
-            1 -> binding.tvDiceRoll.text = dice.roll().toString() + (" So sorry! You rolled a 1. Try again for $luckyNumber !")
-            2 -> binding.tvDiceRoll.text = dice.roll().toString() + (" Sadly, you rolled a 2. Try again for $luckyNumber !")
-            3 -> binding.tvDiceRoll.text = dice.roll().toString() + (" Unfortunately, you rolled a 3. Try again for $luckyNumber !")
-            5 -> binding.tvDiceRoll.text = dice.roll().toString() + (" Don't cry! You rolled a 5. Try again for $luckyNumber !")
-            6 -> binding.tvDiceRoll.text = dice.roll().toString() + (" Apologies! You rolled a 6. Try again for $luckyNumber !")
+            luckyNumber -> binding.tvDiceRoll.text = " You won! your lucky roll is $luckyNumber"
+//            luckyNumber -> binding.imageViewDice.setImageDrawable()
+            1 -> {
+                binding.tvDiceRoll.text = " So sorry! You rolled a 1. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_1)
+            }
+            2 -> {
+                binding.tvDiceRoll.text = " Sadly, you rolled a 2. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_2)
+            }
+            3 -> {
+                binding.tvDiceRoll.text = " Unfortunately, you rolled a 3. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_3)
+            }
+            4 -> {
+                binding.tvDiceRoll.text = " Unfortunately, you rolled a 4. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_4)
+            }
+            5 -> {
+                binding.tvDiceRoll.text = " Don't cry! You rolled a 5. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_5)
+            }
+            6 -> {
+                binding.tvDiceRoll.text = " Apologies! You rolled a 6. Try again for $luckyNumber !"
+                binding.imageViewDice.setImageResource(R.drawable.dice_6)
+            }
         }
 
     }
