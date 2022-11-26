@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">kotlinBasicsApp</string>
+    <string name="roll_dice">Roll Dice</string>
+    <string name="coroutine">Coroutine</string>
 </resources>

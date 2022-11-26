@@ -4,27 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DiceRollActivity">
 
-
-    <Button
-        android:id="@+id/btn_coroutine"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/coroutine"
-        android:layout_margin="20dp"
+    <TextView
+        android:id="@+id/tv_dice_roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="40sp"
+        android:layout_marginTop="300dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_dice"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="20dp"
-        android:text="@string/roll_dice"
+        android:id="@+id/btn_dice_roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_coroutine" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_dice_roll" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
