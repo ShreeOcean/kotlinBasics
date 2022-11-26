@@ -8,12 +8,14 @@
 
     <TextView
         android:id="@+id/tv_dice_roll"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="1"
         android:textSize="40sp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
