@@ -27,8 +27,7 @@ class DiceRollActivity : AppCompatActivity() {
 
     private fun rollDice() {
         val dice = Dice(6)
-        val num = 6
-        val luckyNumber = (1..num).random()
+        val luckyNumber = (1..6).random()
 
         val drawableResource = when (dice.roll()){
             1 -> R.drawable.dice_1
