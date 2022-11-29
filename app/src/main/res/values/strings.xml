@@ -3,4 +3,5 @@
     <string name="roll_dice">Roll Dice</string>
     <string name="coroutine">Coroutine</string>
     <string name="click_roll_to_play">click roll to play</string>
+    <string name="roll">Roll</string>
 </resources>

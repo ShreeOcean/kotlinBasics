@@ -2,72 +2,36 @@ package com.ocean.kotlinbasics
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.ocean.kotlinbasics.ConstantNames.DICE1
+import com.ocean.kotlinbasics.ConstantNames.DICE2
+import com.ocean.kotlinbasics.ConstantNames.DICE3
+import com.ocean.kotlinbasics.ConstantNames.DICE4
+import com.ocean.kotlinbasics.ConstantNames.DICE5
+import com.ocean.kotlinbasics.ConstantNames.DICE6
+import com.ocean.kotlinbasics.ConstantNames.WON
+import com.ocean.kotlinbasics.Dice.roll
 import com.ocean.kotlinbasics.databinding.ActivityDiceRollBinding
+import com.ocean.kotlinbasics.viewModel.DiceRollViewModel
 
 class DiceRollActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDiceRollBinding
+    private lateinit var viewModel: DiceRollViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_dice_roll)
+        viewModel = ViewModelProvider(this)[DiceRollViewModel::class.java]
+        binding.viewModel = viewModel
+        binding.lifecycleOwner =this
+        viewModel.rollDice()
 
-        binding = ActivityDiceRollBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.btnDiceRoll.setOnClickListener { rollDice() }
-        rollDice()
-    }
-
-    class Dice(val numSides: Int) {
-
-        fun roll(): Int {
-            return (1..numSides).random()
+        viewModel.diceImage.observe(this){
+            binding.imageViewDice.setImageResource(it)
         }
-    }
-
-    private fun rollDice() {
-        val dice = Dice(6)
-        val luckyNumber = (1..6).random()
-
-        val drawableResource = when (dice.roll()){
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        binding.imageViewDice.setImageResource(drawableResource)
-        binding.imageViewDice.contentDescription = dice.roll().toString()
-
-//        when (dice.roll()) {
-////            luckyNumber -> binding.tvDiceRoll.text = " You won! your lucky roll is $luckyNumber"
-////            luckyNumber -> binding.imageViewDice.setImageDrawable()
-//            1 -> {
-////                binding.tvDiceRoll.text = " So sorry! You rolled a 1. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_1)
-//            }
-//            2 -> {
-////                binding.tvDiceRoll.text = " Sadly, you rolled a 2. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_2)
-//            }
-//            3 -> {
-////                binding.tvDiceRoll.text = " Unfortunately, you rolled a 3. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_3)
-//            }
-//            4 -> {
-////                binding.tvDiceRoll.text = " Unfortunately, you rolled a 4. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_4)
-//            }
-//            5 -> {
-////                binding.tvDiceRoll.text = " Don't cry! You rolled a 5. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_5)
-//            }
-//            6 -> {
-////                binding.tvDiceRoll.text = " Apologies! You rolled a 6. Try again for $luckyNumber !"
-//                binding.imageViewDice.setImageResource(R.drawable.dice_6)
-//            }
-//        }
-
     }
 }
+
