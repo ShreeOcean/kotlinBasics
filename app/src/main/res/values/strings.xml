@@ -4,4 +4,15 @@
     <string name="coroutine">Coroutine</string>
     <string name="click_roll_to_play">click roll to play</string>
     <string name="roll">Roll</string>
+    <string name="affirmation1">affirmation1</string>
+    <string name="affirmation2">affirmation2</string>
+    <string name="affirmation3">affirmation3</string>
+    <string name="affirmation4">affirmation4</string>
+    <string name="affirmation5">affirmation5</string>
+    <string name="affirmation6">affirmation6</string>
+    <string name="affirmation7">affirmation7</string>
+    <string name="affirmation8">affirmation8</string>
+    <string name="affirmation9">affirmation9</string>
+    <string name="affirmation10">affirmation10</string>
+    <string name="title_activity_scrollable_list">ScrollableListActivity</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.activity.MainActivity">
 
 
     <ScrollView
@@ -41,6 +41,12 @@
                 android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:text="Debugging"/>
+            <Button
+                android:id="@+id/btn_scrollable_list"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:text="Scrollable List"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

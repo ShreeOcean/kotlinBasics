@@ -2,8 +2,8 @@ package com.ocean.kotlinbasics.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ocean.kotlinbasics.ConstantNames
-import com.ocean.kotlinbasics.Dice
+import com.ocean.kotlinbasics.objects.ConstantNames
+import com.ocean.kotlinbasics.objects.Dice
 import com.ocean.kotlinbasics.R
 
 class DiceRollViewModel : ViewModel() {
